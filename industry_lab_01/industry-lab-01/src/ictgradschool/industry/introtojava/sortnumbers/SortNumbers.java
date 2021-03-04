@@ -17,7 +17,15 @@ public class SortNumbers {
 		int third = 0;
 		int fourth = 0;
 		// Answer here
+		first = Math.min(Math.min(number1, number2), Math.min(number3, number4));
 
+		int tempSecond = Math.min(Math.max(number1, number2), Math.max(number3, number4));
+		int tempThird = Math.max(Math.min(number1, number2), Math.min(number3, number4));
+
+		second = Math.min(tempSecond, tempThird);
+		third = Math.max(tempSecond, tempThird);
+
+		fourth = Math.max(Math.max(number1, number2), Math.max(number3, number4));
 		//
 		System.out.println("The numbers are: " + first + ", " + second + ", " + third + ", " + fourth);
 	}
