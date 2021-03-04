@@ -15,7 +15,12 @@ public class ElapsedTime {
 		int maxTimeDiffInMinutes = 12 * 60; // 12 hours => 720 minutes
 		int allMinutes = 0;
 		// Answer here
+		int firstTimeInMins = firstHour * 60 + firstMinutes;
+		int secondTimeInMins = secondHour * 60 + secondMinutes;
 
+		int differenceInMins =  secondTimeInMins - firstTimeInMins;
+		allMinutes = (differenceInMins + maxTimeDiffInMinutes) % maxTimeDiffInMinutes;
+		allMinutes = Math.max(allMinutes, differenceInMins);
 		//
 		System.out.println(allMinutes / 60 + " hours and " + allMinutes % 60 + " minutes have passed.");
 	}
